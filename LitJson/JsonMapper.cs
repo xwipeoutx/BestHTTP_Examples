@@ -489,7 +489,9 @@ namespace LitJson
 
                 if (inst_type == typeof(System.Object))
                     inst_type = typeof(Dictionary<string, object>);
-
+                 
+                value_type = underlying_type ?? inst_type;
+                
                 AddObjectMetadata (inst_type);
                 ObjectMetadata t_data = object_metadata[inst_type];
 
